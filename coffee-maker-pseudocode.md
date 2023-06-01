@@ -1,6 +1,7 @@
-BEGIN
+## // Define Variables
 INIT Sink, Coffee-Pot,  Cup, Filter, Coffee_Grounds, Milk, Sugar, Spoon
-INIT Coffee_Maker (Coffee-Pot, filter_place)
+## // Define Functions
+INIT Coffee-Maker (Coffee-Pot, filter-place)
 START Sink
 REMOVE Coffee-Pot from Coffee_Maker //pop it from the array
   WHILE Coffee-Pot is empty  //Boolean False
@@ -8,26 +9,27 @@ REMOVE Coffee-Pot from Coffee_Maker //pop it from the array
     FILL Coffee-Pot with Water
    }
  TURN Sink OFF
-  WHILE Coffee_Maker is empty // boolean false  
+  WHILE Coffee-Maker is empty // boolean false  
  {
-  FILL Coffee_Maker with Water
+  FILL Coffee-Maker with Water
  }
-PLACE Coffee-Pot in Coffee_Maker //push into the array
-PLACE Filter in Coffee_Maker //push into the array
-COMPUTE (amount of Coffee_Grounds) to INSERT Coffee_Maker.filter_place
-START Coffee_Maker
+PLACE Coffee-Pot in Coffee-Maker //push into the array
+PLACE Filter in Coffee-Maker //push into the array
+COMPUTE (amount of Coffee-Grounds) to INSERT Coffee-Maker's filter-place
+START Coffee-Maker
 //Patiently watch and wait for Coffee to drip down through filter towards the pot
   IF Coffee-Pot is FULL
-    TURN OFF Coffee_Maker
-    REMOVE Coffee-Pot from Coffee_Maker
+    TURN OFF Coffee-Maker
+    REMOVE Coffee-Pot from Coffee-Maker
     
   ELSE
-    Coffee-Pot ++ 
+    Wait for Coffee-Pot to fill up
 WHEN Coffee_Maker is OFF
     POUR Coffee from Coffee Pot into Cup
     POUR Milk into Cup
     ADD Sugar into Cup
 Mix ingredients in Cup
 
+## //END
 
 
