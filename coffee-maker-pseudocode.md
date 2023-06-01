@@ -1,7 +1,8 @@
 ## // Assign Variables
-INIT Sink, Coffee-Pot,  Cup, Filter, Coffee_Grounds, Milk, Sugar, Spoon
+INIT Sink, Cup, Filter, Coffee_Grounds, Milk, Sugar, Spoon
+INIT Coffee-Maker (Coffee-Pot, filter-place, water-tank)
 ## // Define Functions
-INIT Coffee-Maker (Coffee-Pot, filter-place)
+
 START Sink
 REMOVE Coffee-Pot from Coffee_Maker //pop it from the array
   WHILE Coffee-Pot is empty  //Boolean False
