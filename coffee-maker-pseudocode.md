@@ -1,4 +1,4 @@
-## // Define Variables
+## // Assign Variables
 INIT Sink, Coffee-Pot,  Cup, Filter, Coffee_Grounds, Milk, Sugar, Spoon
 ## // Define Functions
 INIT Coffee-Maker (Coffee-Pot, filter-place)
